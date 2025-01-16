@@ -43,7 +43,7 @@ jobs:
                 sudo apt-get install -f
                 google-chrome --version
 
-                
+
             - name: apply k8s portfolio.yaml
               run: |
                 kubectl apply -f portfolio.yaml
@@ -62,5 +62,5 @@ jobs:
                 kubectl get pods
                 kubectl get deployment
                 kubectl get service
-                
+                minikube service --all
                 minikube logs
