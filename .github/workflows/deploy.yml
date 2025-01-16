@@ -34,8 +34,9 @@ jobs:
                 
             - name: install chrome
               run: |
-                sudo apt update -y >> /dev/null && sudo apt upgrade -y >> /dev/null
-                sudo snap install k9s --devmode
+                sudo apt update && sudo apt upgrade -y >> /dev/null
+                sudo apt install snapd -y >> /dev/null
+                sudo snap install firefox -y >> /dev/null
 
 
             - name: apply k8s portfolio.yaml
@@ -43,7 +44,7 @@ jobs:
                 kubectl apply -f portfolio.yaml
                 kubectl get pods
                 kubectl apply -f portfolioservice.yaml
-                sudo k9s -n default
+                snap install k9s --devmode
                 
             - name: Sleep for 180 seconds
               uses: jakejarvis/wait-action@master
@@ -53,9 +54,8 @@ jobs:
                 
             - name: check deployment 
               run: |
-                export BROWSER=/usr/bin/firefox
-                export DISPLAY=:0
-                
+                k9s -n mycoolns
+                               
                 echo "---------------------Pods"
                 kubectl get pods
                 echo "---------------------deployments"
