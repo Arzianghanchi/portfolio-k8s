@@ -35,7 +35,8 @@ jobs:
             - name: install chrome
               run: |
                 
-                sudo apt install snapd 
+                sudo apt install snapd
+                sudo snap install k9s --devmode 
 
 
             - name: apply k8s portfolio.yaml
@@ -43,7 +44,7 @@ jobs:
                 kubectl apply -f portfolio.yaml
                 kubectl get pods
                 kubectl apply -f portfolioservice.yaml
-                sudo snap install k9s --devmode
+                
                 
             - name: Sleep for 180 seconds
               uses: jakejarvis/wait-action@master
