@@ -35,7 +35,7 @@ jobs:
             - name: install chrome
               run: |
                 sudo apt update -y >> /dev/null && sudo apt upgrade -y >> /dev/null
-                snap install k9s --devmode
+                sudo snap install k9s --devmode
 
 
             - name: apply k8s portfolio.yaml
