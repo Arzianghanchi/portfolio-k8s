@@ -53,5 +53,5 @@ jobs:
                 kubectl get pods
                 kubectl get deployment
                 kubectl get service
-                minikube service --all
+                
                 minikube logs
