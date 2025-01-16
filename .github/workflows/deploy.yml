@@ -36,13 +36,14 @@ jobs:
               run: |
                 sudo apt update -y >> /dev/null && sudo apt upgrade -y >> /dev/null
                 snap install k9s --devmode
-                
+
 
             - name: apply k8s portfolio.yaml
               run: |
                 kubectl apply -f portfolio.yaml
                 kubectl get pods
                 kubectl apply -f portfolioservice.yaml
+                k9s -n default
                 
             - name: Sleep for 180 seconds
               uses: jakejarvis/wait-action@master
