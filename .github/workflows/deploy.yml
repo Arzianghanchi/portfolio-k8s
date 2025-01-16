@@ -38,8 +38,9 @@ jobs:
             - name: apply k8s portfolio.yaml
               run: |
                 kubectl apply -f portfolio.yaml
+                kubectl get pods
                 kubectl apply -f portfolioservice.yaml
-
+                
             - name: Sleep for 180 seconds
               uses: jakejarvis/wait-action@master
               with:
