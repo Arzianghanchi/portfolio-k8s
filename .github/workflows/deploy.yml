@@ -39,6 +39,7 @@ jobs:
               run: |
                 kubectl apply -f portfolio.yaml
                 kubectl apply -f portfolioservice.yaml
+                kubectl get pods
                 kubectl get deployment
                 kubectl get service
                 
