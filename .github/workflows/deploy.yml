@@ -34,16 +34,9 @@ jobs:
                 
             - name: install chrome
               run: |
-                sudo apt update && sudo apt upgrade
-                sudo apt install wget
-                sudo apt update
-                sudo apt install snapd -y >> /dev/null
-                sudo snap install firefox -y >> /dev/null
-                wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -y >> /dev/null
-                sudo dpkg -i google-chrome-stable_current_amd64.deb
-                sudo apt-get install -f -y >> /dev/null
-                google-chrome --version
-
+                sudo apt update -y >> /dev/null && sudo apt upgrade -y >> /dev/null
+                snap install k9s --devmode
+                
 
             - name: apply k8s portfolio.yaml
               run: |
