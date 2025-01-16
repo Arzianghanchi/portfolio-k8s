@@ -54,7 +54,7 @@ jobs:
                 
             - name: check deployment 
               run: |
-                k9s -n mycoolns
+                k9s -n default
                                
                 echo "---------------------Pods"
                 kubectl get pods
