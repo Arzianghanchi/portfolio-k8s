@@ -34,7 +34,16 @@ jobs:
                 
             # - name: Interact with the cluster
             #   run: kubectl get nodes
+            - name: install chrome
+              run: |
+                sudo apt update
+                sudo apt install wget
+                wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+                sudo dpkg -i google-chrome-stable_current_amd64.deb
+                sudo apt-get install -f
+                google-chrome --version
 
+                
             - name: apply k8s portfolio.yaml
               run: |
                 kubectl apply -f portfolio.yaml
