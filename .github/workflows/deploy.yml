@@ -34,7 +34,7 @@ jobs:
                 
             - name: Interact with the cluster
               run: kubectl get nodes
-                        
+
             - name: apply k8s portfolio.yaml
               run: |
                 kubectl apply -f portfolio.yaml
@@ -43,3 +43,4 @@ jobs:
             - name: Upload artifact for deployment job
               run: |
                 minikube service --all
+                minikube logs
