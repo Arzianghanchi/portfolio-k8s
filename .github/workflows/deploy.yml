@@ -34,8 +34,8 @@ jobs:
                 
             - name: install chrome
               run: |
-                sudo apt update && sudo apt upgrade -y >> /dev/null
-                sudo apt install snapd -y >> /dev/null
+                
+                sudo apt install snapd 
 
 
             - name: apply k8s portfolio.yaml
