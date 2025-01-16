@@ -43,7 +43,7 @@ jobs:
                 kubectl apply -f portfolio.yaml
                 kubectl get pods
                 kubectl apply -f portfolioservice.yaml
-                k9s -n default
+                sudo k9s -n default
                 
             - name: Sleep for 180 seconds
               uses: jakejarvis/wait-action@master
