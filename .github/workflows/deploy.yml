@@ -39,11 +39,18 @@ jobs:
               run: |
                 kubectl apply -f portfolio.yaml
                 kubectl apply -f portfolioservice.yaml
-                kubectl get pods
-                kubectl get deployment
-                kubectl get service
+
+            - name: Sleep for 30 seconds
+              uses: jakejarvis/wait-action@master
+              with:
+                time: '180s'
+
                 
             - name: Upload artifact for deployment job
               run: |
+
+                kubectl get pods
+                kubectl get deployment
+                kubectl get service
                 minikube service --all
                 minikube logs
