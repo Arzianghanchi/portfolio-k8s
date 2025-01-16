@@ -43,7 +43,7 @@ jobs:
                 kubectl apply -f portfolio.yaml
                 kubectl get pods
                 kubectl apply -f portfolioservice.yaml
-                snap install k9s --devmode
+                sudo snap install k9s --devmode
                 
             - name: Sleep for 180 seconds
               uses: jakejarvis/wait-action@master
