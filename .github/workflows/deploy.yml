@@ -39,6 +39,8 @@ jobs:
               run: |
                 kubectl apply -f portfolio.yaml
                 kubectl apply -f portfolioservice.yaml
+                kubectl get deployment
+                kubectl get service
                 
             - name: Upload artifact for deployment job
               run: |
