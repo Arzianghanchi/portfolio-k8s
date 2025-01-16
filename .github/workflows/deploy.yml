@@ -20,22 +20,26 @@ jobs:
     deploy-on-push:
         runs-on : ubuntu-latest
 
+
+
         steps:
-
-            - name: Set up Node.js version
-              uses: actions/setup-node@v3
+            - name: Checkout
+              uses: actions/checkout@v4
+            - 
+              name: Setup Minikube
+              uses: manusa/actions-setup-minikube@v2.13.1
               with:
-                node-version: '18.x'
-
-
-            - name: npm install ,build. test
+                minikube version: 'v1.35.0'
+                kubernetes version: 'v1.32.0'
+                
+            - name: Interact with the cluster
+              run: kubectl get nodes
+                        
+            - name: apply k8s portfolio.yaml
               run: |
-                npm install
-                npm run build --if-present
-                npm run test --if-present
+                kubectl apply -f portfolio.yaml
+                kubectl apply -f portfolioservice.yaml
                 
             - name: Upload artifact for deployment job
-              uses: actions/upload-artifact@v4
-              with:
-                name: portfolio
-                path: portfolio-artifact
+              run: |
+                minikube service --all
