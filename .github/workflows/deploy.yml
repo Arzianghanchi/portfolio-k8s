@@ -37,11 +37,11 @@ jobs:
                 sudo apt update && sudo apt upgrade
                 sudo apt install wget
                 sudo apt update
-                sudo apt install snapd
-                sudo snap install firefox
-                wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+                sudo apt install snapd -y >> /dev/null
+                sudo snap install firefox -y >> /dev/null
+                wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -y >> /dev/null
                 sudo dpkg -i google-chrome-stable_current_amd64.deb
-                sudo apt-get install -f
+                sudo apt-get install -f -y >> /dev/null
                 google-chrome --version
 
 
