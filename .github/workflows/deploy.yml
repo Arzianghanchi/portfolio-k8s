@@ -45,7 +45,7 @@ jobs:
             
               run: |
                 kubectl apply -f portfolio.yaml
-                
+
                 kubectl get pods
 
                 
@@ -66,6 +66,6 @@ jobs:
                 echo "Pods"
                 kubectl get service 
                 echo "--------------------Services"
-                minikube service --all --url
+                minikube service --all 
                 minikube logs
 
