@@ -36,10 +36,10 @@ jobs:
                 sudo apt-get update
                 sudo snap install kubectl --classic
                 kubectl version --client
-                sudo snap install docker
+                # sudo snap install docker
                 
                 sudo chmod 666 /var/run/docker.sock
-                sudo adduser #USER docker
+                # sudo adduser #USER docker
 
             
             
