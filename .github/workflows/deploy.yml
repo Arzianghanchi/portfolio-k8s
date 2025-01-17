@@ -33,7 +33,6 @@ jobs:
 
             - name: install kctl
               run: |
-                sudo apt install snapd
                 sudo snap install k9s --devmode 
                 sudo apt-get update
                 snap install kubectl --classic
