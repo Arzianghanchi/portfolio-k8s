@@ -30,9 +30,8 @@ jobs:
             #   with:
             #     minikube version: 'v1.35.0'
             #     kubernetes version: 'v1.32.0'
-
             - name: install kctl
-              run: |
+              run: 
                 sudo apt-get update
                 sudo snap install kubectl --classic
                 kubectl version --client
