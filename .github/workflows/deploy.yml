@@ -24,13 +24,6 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
             
-            # - name: Setup Minikube
-            #   uses: manusa/actions-setup-minikube@v2.13.1
-
-            #   with:
-            #     minikube version: 'v1.35.0'
-            #     kubernetes version: 'v1.32.0'
-
             - name: install chrome
               run: |
                 sudo apt install snapd
@@ -39,13 +32,7 @@ jobs:
               run: 
                 sudo apt-get update
                 sudo snap install kubectl 
-                kubectl --version 
-              # sudo snap install docker
-                
-              #  sudo chmod 666 /var/run/docker.sock
-              # sudo adduser #USER docker
-
-            
+                kubectl --version           
             
             - name: minikube start
               run: |
@@ -54,24 +41,16 @@ jobs:
                 minikube start 
                 minikube status 
 
-            # - name: install chrome
-            #   run: |
-            #     sudo apt install snapd
-            #     sudo snap install k9s --devmode 
-
-
             - name: apply k8s portfolio.yaml
             
               run: |
                 kubectl apply -f portfolio.yaml
                 kubectl apply -f portfolioservice.yaml
                 
-
-                
-                
-            - name: Sleep for 30 seconds
-              run: sleep 30s
-              shell: bash
+         
+            # - name: Sleep for 30 seconds
+            #   run: sleep 30s
+            #   shell: bash
 
                 
             - name: check deployment 
@@ -86,4 +65,5 @@ jobs:
                 echo "--------------------Services"
                 minikube service --all 
                 minikube logs
+                
 
