@@ -31,9 +31,9 @@ jobs:
         #         minikube version: 'v1.35.0'
         #         kubernetes version: 'v1.32.0'
 
-            # - name: install chrome
-            #   run: |
-            #     sudo apt install snapd
+            - name: install chrome
+              run: |
+                sudo apt install snapd
          
             - name: install kctl
               run: 
