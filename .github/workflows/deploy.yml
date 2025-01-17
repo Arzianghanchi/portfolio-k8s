@@ -58,7 +58,7 @@ jobs:
                 echo "---------------------deployments"
                 kubectl get deployment
                 echo "Pods"
-                kubectl get service --url
+                kubectl get service 
                 echo "--------------------Services"
                 minikube service --all --url
                 minikube logs
