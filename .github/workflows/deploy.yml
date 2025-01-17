@@ -46,14 +46,13 @@ jobs:
               run: |
                 kubectl apply -f portfolio.yaml
 
-                kubectl get pods
+                
 
                 
                 
-            - name: Sleep for 180 seconds
-              uses: jakejarvis/wait-action@master
-              with:
-                time: '100s'
+            - name: Sleep for 30 seconds
+              run: sleep 30s
+              shell: bash
 
                 
             - name: check deployment 
