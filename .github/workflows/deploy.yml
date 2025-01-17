@@ -39,7 +39,7 @@ jobs:
               run: 
                 sudo apt-get update
                 sudo snap install kubectl 
-                kubectl version --client
+                kubectl --version 
               # sudo snap install docker
                 
               #  sudo chmod 666 /var/run/docker.sock
