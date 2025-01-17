@@ -32,7 +32,7 @@ jobs:
                 
             - name: install chrome
               run: |
-                
+                minikube start
                 sudo apt install snapd
                 sudo snap install k9s --devmode 
 
@@ -47,7 +47,7 @@ jobs:
             - name: Sleep for 180 seconds
               uses: jakejarvis/wait-action@master
               with:
-                time: '180s'
+                time: '100s'
 
                 
             - name: check deployment 
@@ -62,3 +62,4 @@ jobs:
                 echo "--------------------Services"
                 minikube service --all --url
                 minikube logs
+
