@@ -29,7 +29,10 @@ jobs:
               with:
                 minikube version: 'v1.35.0'
                 kubernetes version: 'v1.32.0'
-                
+            - name: minikube start
+              run: |
+                minikube start 
+                minikube status 
             - name: install chrome
               run: |
                 minikube start
