@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: deploy
+name: K8s Portfolio Deployment
 
 # Controls when the workflow will run
 on:
@@ -24,10 +24,6 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
             
-            - name: install chrome
-              run: |
-                sudo apt install snapd
-         
             - name: install kctl
               run: 
                 sudo apt-get update
@@ -42,16 +38,11 @@ jobs:
                 minikube status 
 
             - name: apply k8s portfolio.yaml
-            
               run: |
                 kubectl apply -f portfolio.yaml
                 kubectl apply -f portfolioservice.yaml
                 
          
-            # - name: Sleep for 30 seconds
-            #   run: sleep 30s
-            #   shell: bash
-
                 
             - name: check deployment 
               run: |
@@ -60,8 +51,6 @@ jobs:
                 kubectl get pods
                 echo "---------------------deployments"
                 kubectl get deployment
-                echo "Pods"
-                kubectl get service 
                 echo "--------------------Services"
                 minikube service --all 
                 minikube logs
