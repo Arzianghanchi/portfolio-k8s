@@ -34,7 +34,7 @@ jobs:
             - name: install kctl
               run: |
                 sudo apt-get update
-                snap install kubectl --classic
+                sudo snap install kubectl --classic
                 kubectl version --client
 
             
