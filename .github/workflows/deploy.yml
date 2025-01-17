@@ -24,12 +24,12 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
             
-            # - name: Setup Minikube
-            #   uses: manusa/actions-setup-minikube@v2.13.1
-            #   options: --user root
-            #   with:
-            #     minikube version: 'v1.35.0'
-            #     kubernetes version: 'v1.32.0'
+            - name: Setup Minikube
+              uses: manusa/actions-setup-minikube@v2.13.1
+              options: --user root
+              with:
+                minikube version: 'v1.35.0'
+                kubernetes version: 'v1.32.0'
 
             - name: install chrome
               run: |
@@ -47,12 +47,12 @@ jobs:
 
             
             
-            - name: minikube start
-              run: |
-                curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
-                sudo dpkg -i minikube_latest_amd64.deb
-                minikube start 
-                minikube status 
+            # - name: minikube start
+            #   run: |
+            #     curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+            #     sudo dpkg -i minikube_latest_amd64.deb
+            #     minikube start 
+            #     minikube status 
 
             # - name: install chrome
             #   run: |
