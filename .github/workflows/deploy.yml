@@ -35,16 +35,17 @@ jobs:
                 minikube start 
                 minikube status 
 
-            - name: install chrome
-              run: |
-                sudo apt install snapd
-                sudo snap install k9s --devmode 
+            # - name: install chrome
+            #   run: |
+            #     sudo apt install snapd
+            #     sudo snap install k9s --devmode 
 
 
             - name: apply k8s portfolio.yaml
             
               run: |
                 kubectl apply -f portfolio.yaml
+                
                 kubectl get pods
 
                 
