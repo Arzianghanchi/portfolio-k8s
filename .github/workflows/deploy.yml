@@ -36,6 +36,7 @@ jobs:
                 sudo apt-get update
                 sudo snap install kubectl --classic
                 kubectl version --client
+                sudo snap install docker
 
             
             
